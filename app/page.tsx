@@ -1,5 +1,5 @@
 'use client';
-
+import Image from 'next/image';
 import { generatePerson } from './generatePerson';
 
 // =====================================================
@@ -86,9 +86,11 @@ export default function Home() {
             className="bg-white rounded-lg shadow-sm border p-6 flex gap-4 hover:shadow-md transition-shadow"
           >
             {/* Person - generated from the person's name */}
-            <img
+            <Image
               src={generatePerson(card.name, 200)}
               alt={card.name}
+              width={64}  // Equivalent to w-16 (16 * 4px)
+              height={64}
               className="w-16 h-16 rounded-full flex-shrink-0"
             />
 
